@@ -1,25 +1,28 @@
 from textblob import TextBlob
 import tweepy
 
-consumer_key ='4PCu8J76Zh0WugAiE0U4Hx4Ut'
-consumer_secert='cYTu24qxaobPGy8OKxtozfPnQBXPcB6FSnNkkTVsJ7AWL9gU63'
+consumer_key =<consumer_key>
+consumer_secert=<consumer_secert>
 
-access_token='16225523-S7xirZGBa4BUUHCJ8uCRGHboy5poeB3shFk9MiZFR'
-accces_secert='7X48RTgSm6d6ztTKlBQ1OWjUGJyVNnmkroRR7gtxDmGTR'
+access_token=<access_token=>
+accces_secert=<access_token=>
 
 auth = tweepy.OAuthHandler(consumer_key,consumer_secert)
 auth.set_access_token(access_token,accces_secert)
 
 api =tweepy.API(auth)
 
-tweets= api.search('#Repealthe8th',count=500)
-
+tweets= api.search('#trump',count=500)
+countn=0
+countp=0
 for tweet in tweets:
     #print(tweet.text)
     analysis= TextBlob(tweet.text)
     if analysis.sentiment.polarity > 0:
-        print('y')
+       countp += 1
     elif analysis.sentiment.polarity == 0:
-        print('n')
+        countn +=1
     else:
-        print('0')
+        print('Nutral')
+print('Negative {}'.format(countn))
+print('Positive {}'.format(countp))
