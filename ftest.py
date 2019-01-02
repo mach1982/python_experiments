@@ -1,5 +1,5 @@
 f=open("text")
 l=f.readlines()
 
-ls =list(l)
+ls =list()
 print(ls[1])

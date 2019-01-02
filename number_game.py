@@ -35,17 +35,5 @@ def game():
 				exit()
 				
 			
-			
-		
-			
-			
-			
-		
-
-
-	
-		
-		
-	
-game()
+	game()
 	    
