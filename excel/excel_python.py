@@ -20,6 +20,6 @@ for r in cursor:
     worksheet.write(row,col-1,r[0])
     worksheet.write(row, col,r[1])
    
-    row += 1
+    row += 2
 
 workbook.close()
